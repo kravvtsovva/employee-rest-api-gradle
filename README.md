@@ -1,20 +1,23 @@
-# Тестовый сервер для практической работы 2, вариант 1
-Для запуска скачать [Java 11](https://bell-sw.com/pages/downloads/) или выше
+# Employee REST API (TRPP Practical Work 2, Variant 1)
 
-## Micronaut 2.3.3 Documentation
+Этот проект — учебное задание на основе репозитория [rtu-mirea/trpp-second-1](https://github.com/rtu-mirea/trpp-second-1).
 
-- [User Guide](https://docs.micronaut.io/2.3.3/guide/index.html)
-- [API Reference](https://docs.micronaut.io/2.3.3/api/index.html)
-- [Configuration Reference](https://docs.micronaut.io/2.3.3/guide/configurationreference.html)
-- [Micronaut Guides](https://guides.micronaut.io/index.html)
+Цель: исправить ошибки сборки и настройки Gradle, собрать UberJar, протестировать REST API и устранить нарушения кодстайла.
 
----
+## Что было сделано
 
-## Feature tomcat-server documentation
+- Найдена и добавлена отсутствующая зависимость в `build.gradle`
+- Исправлены ошибки в структуре пакетов Java
+- Сгенерирована документация (Javadoc)
+- Собран UberJar с помощью `shadowJar`, файл включает фамилию
+- Протестирован запуск на `localhost:8080`
+- Протестированы запросы:
+  - `GET /` — статус сервера
+  - `GET /employee/{id}` — получение сотрудника по ID
+- Выполнена проверка `checkstyleMain`, исправлены ошибки
 
-- [Micronaut Tomcat Server documentation](https://micronaut-projects.github.io/micronaut-servlet/1.0.x/guide/index.html#tomcat)
+## Сборка и запуск
 
-## Feature http-client documentation
-
-- [Micronaut HTTP Client documentation](https://docs.micronaut.io/latest/guide/index.html#httpClient)
-
+```bash
+./gradlew shadowJar
+java -jar build/libs/trpp-second-1-YourSurname-all.jar
